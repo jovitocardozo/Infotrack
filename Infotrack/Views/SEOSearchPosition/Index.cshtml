@@ -1,0 +1,35 @@
+﻿@model Infotrack.Models.SearchModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Find your search position in Google</h2>
+
+@using (Html.BeginForm("Search", "SEOSearchPosition", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>Please enter the search engine URL : </td>
+        <td>@Html.TextBoxFor(m=>m.searchEngineURL)</td>
+    </tr>
+    <tr>
+        <td>Keywords for searching : </td>
+        <td>@Html.TextBoxFor(m=>m.searchKeywords)</td>
+    </tr>
+    <tr>
+        <td>Target URL to search for : </td>
+        <td>@Html.TextBoxFor(m=>m.targetURLSearch)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Submit" /></td>
+    </tr>
+</table>
+}
+<table>
+    <tr>
+        <td>Your website  was found at position(s) : @ViewBag.SearchPosition  </td>
+    </tr>
+</table>
+
